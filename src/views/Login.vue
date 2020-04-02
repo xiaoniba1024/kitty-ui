@@ -111,6 +111,9 @@ export default {
   },
   computed:{
     ...mapState({
+      // 当通过主题选择，选择后会触发onThemeChange函数改变state.app.themeColor 的值
+      // state.app.themeColor状态变化 会重新计算themeColor，themeColor是上面主题的样式
+      // 涉及到两个知识点 1 mapState  2 computed
       themeColor: state=>state.app.themeColor
     })
   }

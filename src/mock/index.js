@@ -46,7 +46,7 @@ function fnCreate (mod, isOpen = true) {
             return res.data
           })
         }
-      })(mod[key]() || {})
+      })(mod[key]() || {})  //函数自执行
     }
   }
 }

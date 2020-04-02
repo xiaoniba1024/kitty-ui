@@ -3,10 +3,10 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
-const ora = require('ora')
-const rm = require('rimraf')
-const path = require('path')
-const chalk = require('chalk')
+const ora = require('ora')   // node 命令加载动画
+const rm = require('rimraf')  // node 模块 删除工具 包裹了  rm -rf 
+const path = require('path')  // node path模块
+const chalk = require('chalk') // 第三方包 chalk 这个包是为了使输出不再单调,添加文字背景什么的,改变字体颜色什么的
 const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
@@ -16,7 +16,7 @@ spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
-  webpack(webpackConfig, (err, stats) => {
+  webpack(webpackConfig, (err, stats) => {  //使用 webpackConfig 配置 webpack
     spinner.stop()
     if (err) throw err
     process.stdout.write(stats.toString({
